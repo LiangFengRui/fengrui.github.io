@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="mask">
+        <div class="center">
+            <h2 class="title">
+                <img src="./images/1.png" alt="">
+            </h2>
+            <img :src="imgArr[index]" alt="">
+            <a href="javascript:void(0)" v-show="index!=0" class="left" @click="prev">
+                <img src="./images/pictures/prev.png">
+            </a>
+            <a href="javascript:(0)" v-show="index<imgArr.length-1" class="right" @click="next">
+                <img src="./images/pictures/next.png">
+            </a>
+        </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#mask",
+            data: {
+                imgArr: [
+                    "./images/pictures/00.jpg",
+                    "./images/pictures/01.jpg",
+                    "./images/pictures/02.jpg",
+                    "./images/pictures/03.jpg",
+                    "./images/pictures/04.jpg",
+                    "./images/pictures/05.jpg",
+                    "./images/pictures/06.jpg",
+                    "./images/pictures/07.jpg",
+                    "./images/pictures/08.jpg",
+                    "./images/pictures/09.jpg",
+                    "./images/pictures/10.jpg",
+
+                ],
+                index: 0
+            },
+            methods: {
+                prev: function () {
+                    this.index--;
+                 },
+                next: function () { 
+                    this.index++;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
